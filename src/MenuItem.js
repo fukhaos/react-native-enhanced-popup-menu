@@ -1,7 +1,13 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
-import { StyleSheet, Text, TouchableHighlight, Platform } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  Platform,
+  View,
+} from 'react-native';
 
 function MenuItem({
   children,
@@ -21,17 +27,7 @@ function MenuItem({
       style={[styles.container, style]}
       underlayColor={underlayColor}
     >
-      <Text
-        ellipsizeMode={Platform.OS === 'ios' ? 'clip' : 'tail'}
-        numberOfLines={1}
-        style={[
-          styles.title,
-          disabled && { color: disabledTextColor },
-          textStyle,
-        ]}
-      >
-        {children}
-      </Text>
+      <View>{children}</View>
     </TouchableHighlight>
   );
 }
